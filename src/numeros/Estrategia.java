@@ -15,6 +15,7 @@ public class Estrategia {
 		tipos.add(new MultiploSiete());
 		tipos.add(new MultiploTresYCinco());
 	}
+	
 	public TipoNumero devolverEstrategia(){
 		TipoNumero tiposNumero = new NumeroGeneral(numero);		
 		for (TipoNumero tipoNumero : tipos) {
