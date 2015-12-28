@@ -9,7 +9,7 @@ public class EscribirNumeros {
 	public String escribeNumeros(int numerosAImprimir) {
 		String numeros = "";
 		if(numerosAImprimir >= PRIMERO){
-			numeros = devolverFizzBuzz(PRIMERO-1);
+			numeros = Estrategia.devolverEstrategia(PRIMERO-1).devolverValor();
 		}		
 		numeros = numeros+devolverNumerosSeparados(numerosAImprimir);
 		return numeros;
@@ -18,14 +18,9 @@ public class EscribirNumeros {
 	private String devolverNumerosSeparados(int numerosAImprimir) {
 		String numeros ="";
 		for(int i = 1; i<numerosAImprimir; i++){
-			numeros = numeros + SEPARADOR+ devolverFizzBuzz(i);
+			numeros = numeros + SEPARADOR+ Estrategia.devolverEstrategia(i).devolverValor();
 		}
 		return numeros;
-	}
-	
-	public String devolverFizzBuzz(int numero){
-		Estrategia estrategia = new Estrategia(numero);
-		return estrategia.devolverEstrategia().devolverValor();
 	}
 	
 }
