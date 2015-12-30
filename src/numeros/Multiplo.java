@@ -1,32 +1,40 @@
 package numeros;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Arrays;
+
 
 public class Multiplo extends TipoNumero{
-	private List<Integer> multiplos = new LinkedList<Integer>();
+	private Integer[] multiplos;
 	private String valor;
 	
 	public Multiplo(String valor,Integer... multiplo){
 		this.valor = valor;
-		for (Integer valorMultiplo : multiplo) {
-			multiplos.add(valorMultiplo);
-		}
+		this.multiplos = multiplo;
+		Arrays.sort(this.multiplos);
 	}
 	
 	@Override
 	public String devolverValor() {
 		return valor;
 	}
+	
 	@Override
 	public boolean esMultiplo(int numero) {
+		boolean esMultiplo = true;
 		for (Integer multiplo : multiplos) {
-			if(!ValidacionMultiplos.esMultiplo(numero, multiplo)){
-				return false;
+			if(!esMultiploDe(numero, multiplo)){
+				esMultiplo = false;
 			}
 		}
-		return true;
+		return esMultiplo;
 	}
 	
-	
+	private boolean esMultiploDe(int numero, int multiplo){
+		return numero%multiplo==0;
+	}
+
+	@Override
+	public Integer[] devolverMultiplos() {
+		return multiplos;
+	}
 }

@@ -14,5 +14,9 @@ public class NumeroGeneral extends TipoNumero {
 	public boolean esMultiplo(int numero) {
 		return true;
 	}
+	@Override
+	public Integer[] devolverMultiplos() {
+		return new Integer[]{};
+	}
 	
 }
