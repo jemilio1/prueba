@@ -13,7 +13,7 @@ public class Estrategia {
 	
 	private List<TipoNumero> tipos;
 	
-	public Estrategia(){
+	public Estrategia() throws Exception{
 		this.tipos = new ArrayList<TipoNumero>();
 		tipos.add(new Multiplo("3 y 5", 3,5));
 		tipos.add(new Multiplo("2",2));

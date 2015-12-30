@@ -2,7 +2,6 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 import numeros.Estrategia;
-import numeros.TipoNumero;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +10,7 @@ public class FizzBuzzTest {
 
 	  private Estrategia estrategia;
 	  @Before
-	  public void inic(){
+	  public void inic() throws Exception{
 		  estrategia = new Estrategia();
 	  }
 	  
@@ -20,13 +19,6 @@ public class FizzBuzzTest {
 	      assertEquals("No devuelve FizzBuzz",estrategia.devolverEstrategia(0).size(),3);
 	   }
 	   
-	  @Test
-	  public void testFizzBuzz0Texto(){
-		  for (TipoNumero numero : estrategia.devolverEstrategia(0)) {
-			System.out.println(numero.devolverValor());
-		  }
-	  }
-	  
 	   @Test
 	   public void testFizzBuzz1(){
 		   assertEquals("testFizzBuzz1",1,estrategia.devolverEstrategia(1).size());
@@ -64,4 +56,5 @@ public class FizzBuzzTest {
 	      assertEquals("testFizzBuzz30",estrategia.devolverEstrategia(30).get(0).devolverValor(),"2");
 	      assertEquals("testFizzBuzz30",estrategia.devolverEstrategia(30).get(1).devolverValor(),"3 y 5");
 	   }
+	   
 }

@@ -7,10 +7,13 @@ public class Multiplo extends TipoNumero{
 	private Integer[] multiplos;
 	private String valor;
 	
-	public Multiplo(String valor,Integer... multiplo){
+	public Multiplo(String valor,Integer... multiplo) throws Exception{
 		this.valor = valor;
 		this.multiplos = multiplo;
 		Arrays.sort(this.multiplos);
+		if(multiplos[0]==0){
+			throw new Exception("Multiplo no valido");
+		}
 	}
 	
 	@Override

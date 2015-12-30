@@ -13,7 +13,7 @@ import org.junit.Test;
 public class TestOrdenacion {
 
 	@Test
-	public void testOrdenacion(){
+	public void testOrdenacion() throws Exception{
 		List<TipoNumero> tipos = new ArrayList<TipoNumero>();
 		tipos.add(new Multiplo("3 y 5 ", 3,5));
 		tipos.add(new Multiplo("1 y 4", 1,4));
